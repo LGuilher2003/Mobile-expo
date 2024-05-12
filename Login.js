@@ -1,13 +1,15 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Button, Image, ImageBackground, StyleSheet, Text, TextInput, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import menu from './menu'; 
-const Stack = createNativeStackNavigator();
+import eventos from './eventos'; 
 
+const Stack = createNativeStackNavigator();
 function Login({ navigation }) {
   const apertar = () => {
     navigation.navigate('Menu');
+    
   };
 
   return (
@@ -36,6 +38,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Menu" component={menu} />
+        <Stack.Screen name="eventos" component={eventos} />
       </Stack.Navigator>
     </NavigationContainer>
   );
