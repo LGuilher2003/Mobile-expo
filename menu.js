@@ -1,7 +1,16 @@
-import { Text, SafeAreaView, StyleSheet,Button } from 'react-native';
+import React from 'react';
+import { Button, Image, ImageBackground, StyleSheet, Text, TextInput, View,SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import eventos from './eventos'; 
 
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function Menu({ navigation }) {
+  const apertar = () => {
+    navigation.navigate('eventos');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.paragraph}>
@@ -26,6 +35,7 @@ export default function App() {
       <Button
       title="Eventos"
       color='#ffa07a'
+      onPress={apertar} 
       />
 
     </SafeAreaView>
@@ -46,6 +56,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center'
   },
-
 });
-
