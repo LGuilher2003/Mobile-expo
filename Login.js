@@ -4,12 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import menu from './menu'; 
 import eventos from './eventos'; 
+import churrasqueira1 from './churrasqueira1'; 
+import churrasqueira2 from './churrasqueira2';
+import churrasqueira3 from './churrasqueira3';
 
 const Stack = createNativeStackNavigator();
 function Login({ navigation }) {
   const apertar = () => {
-    navigation.navigate('Menu');
-    
+    navigation.navigate('Menu');  
   };
 
   return (
@@ -39,6 +41,9 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Menu" component={menu} />
         <Stack.Screen name="eventos" component={eventos} />
+        <Stack.Screen name="churrasqueira1" component={churrasqueira1} />
+        <Stack.Screen name="churrasqueira2" component={churrasqueira2} />
+        <Stack.Screen name="churrasqueira3" component={churrasqueira3} />
       </Stack.Navigator>
     </NavigationContainer>
   );
